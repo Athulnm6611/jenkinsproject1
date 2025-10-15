@@ -5,10 +5,10 @@ echo "====== Running Tests ======"
 echo "All tests passed!"
 echo "====== Deploying ======"
 
-# Create deployment directory if it doesn't exist
-mkdir -p /var/jenkins-deploy/
+# Create deploy directory inside workspace
+mkdir -p "$WORKSPACE/deploy"
 
-# Copy all files from workspace to deployment directory
-cp -r ./* /var/jenkins-deploy/
+# Copy all files from current directory to deploy folder
+cp -r ./* "$WORKSPACE/deploy/"
 
-echo "Deployment complete! This script is executing."
+echo "Deployment complete! This script executed successfully."
